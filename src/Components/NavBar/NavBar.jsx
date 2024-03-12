@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Menus = () => {
+    
     const links = ['products', 'about', 'contact', 'blog'];
+    
     return (
         <>
             {
@@ -13,7 +16,11 @@ const Menus = () => {
     )
 }
 const NavBar = () => {
-    const user = false;
+
+    const { logOut, user } = useAuth();
+
+    console.log(user);
+
     return (
         <>
             <div className="navbar bg-base-100">
@@ -35,6 +42,7 @@ const NavBar = () => {
                 </div>
 
 
+                {/* Avater part */}
 
                 <div className="navbar-end">
 
